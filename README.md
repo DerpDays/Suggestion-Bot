@@ -1,4 +1,4 @@
-[![Discord](https://pm1.narvii.com/6269/935a0c5a463f7c20e91212f9c8e149851d7a8a24_hq.jpg)](http://discord.gg/8nG3FkS/)
+[![Discord](https://s15.postimg.cc/hb3hne1jf/banner.png)](http://discord.gg/8nG3FkS/)
 
 <p align="center">
   <b>Suggestion Bot</b><br>
