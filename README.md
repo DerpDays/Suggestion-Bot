@@ -1,7 +1,7 @@
 [![Discord](https://s15.postimg.cc/hb3hne1jf/banner.png)](http://discord.gg/8nG3FkS/)
 
 <p align="center">
-  <b>Suggestion Bot</b><br>
+#  <b>Suggestion Bot</b><br>
   <a href="http://discord.gg/8nG3FkS/">Support</a> |
   <a href="https://discord.gg/r3sSKJJ">Python Support</a>
   <br><br>
