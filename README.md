@@ -3,6 +3,7 @@
 <p align="center">
   <b>Suggestion Bot</b><br>
   <a href="http://discord.gg/8nG3FkS">Support</a> |
+  <a href="http://paypal.me/derpdays">Donate</a> |
   <a href="https://discord.gg/r3sSKJJ">Python Support</a>
   <br><br>
 </p>
@@ -10,9 +11,10 @@
 ---
 
 ### The bot as is without modification contains:
-* Prefix setting command
-* Toggle the ability to send suggestions
-* Supports multiple servers
+* Custom output locations
+* Enable/Disable command
+* Ask the questions in private messages or in the channel the command was executed from
+* Automatic config generation
 * Ability to change where the suggestions get posted
 
 
@@ -23,21 +25,33 @@ Suggestion Bot is built off the discord.py and requires python 3.6 to be install
 Install the following dependencies for the bot to work!
 
 
-- Python V3.6
-- Discord.Py
-
----
-Download the [latest](https://www.python.org/downloads/) version of python and make sure to add it to the path.
+- PYTHON V3.6
+- GIT
 
 ---
 
-Open command prompt (Windows + R) then enter the following ```py -3 -m pip install -U discord.py```
+Download the [latest](https://www.python.org/downloads/) version of python and make sure select `Add Python 3.X to PATH`.
 
 ---
 
-Now clone the directory to a folder then add your bots token to the settings.json file under "TOKEN"
+Download the [latest](https://git-scm.com/download/win) version of git and make sure to select `Run git from the windows command prompt`.
 
-Run the startbot.bat and then use `!suggestsettings` to configure the bot!
+---
+
+Right click in the folder you want the bot to be in and click `Git Bash Here`
+Then copy the following into the terminal:
+- `git clone https://github.com/DerpDays/Suggestion-Bot.git`
+- `pip install -r requirements.txt`
+
+
+Run the setup.bat and enter your [bots token](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) and click `SUBMIT TOKEN` then decide if you want the bot to auto-restart (RECCOMENDED) or if you want the bot to not auto restart then click on the button that matches your decision.
+
+Add the bot to your server by using this link https://discordapp.com/api/oauth2/authorize?client_id=YOURBOTCLIENTID&permissions=8&scope=bot but replacing YOURBOTCLIENTID with your bots **client id**.
+
+The bot should be ready to start now if you entered a correct token, run startbot.bat and then use `!bot prefix` to set a global prefix and then configure the bot with `!settings`!
+
+
+> Did you put a invalid bot token? Dont worry because theres a simple fix without redownloading the bot all over again. Open settings.json and under the `"GLOBAL"` object find `"TOKEN":` and replace the content after the `:` with "YOURBOTTOKEN"!
 
 ### Todos
 
