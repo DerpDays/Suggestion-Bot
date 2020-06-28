@@ -40,7 +40,7 @@ Download the [latest](https://git-scm.com/download/win) version of git and make 
 
 Right click in the folder you want the bot to be in and click `Git Bash Here`
 Then copy the following into the terminal:
-- `git clone https://github.com/AdamAtomus/Suggestion-Bot.git`
+- `git clone https://github.com/DerpDays/Suggestion-Bot.git`
 - `pip install -r requirements.txt`
 
 
