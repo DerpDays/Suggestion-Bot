@@ -59,7 +59,7 @@ class Suggest(commands.Cog):
             embed = discord.Embed(title=f'Suggestion ID: {self.bot.config["GUILDS"][str(ctx.guild.id)]["ID"]}', colour=0xffffff)
             embed.add_field(name=f'Brief Explanation: ', value=f'{brief.content}')
             embed.add_field(name=f'Detailed Explanation: ', value=f'{explain.content}')
-            embed.set_footer(text=f'Suggestion by: {author.name} • UserID: {author.id} • Bot made by DerpyDays.')
+            embed.set_footer(text=f'Suggestion by: {author.name} • UserID: {author.id} • Bot made by DerpDays.')
 
             try:
                 await author.send(embed=sentembed)
