@@ -18,7 +18,7 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(*extras)(bot, message)
 
 
-client = commands.Bot(command_prefix=get_prefix)
+client = commands.Bot(command_prefix=get_prefix, case_insensitive=True)
 
 with open('settings.json', 'r') as f:
     client.config = json.load(f)
@@ -48,20 +48,19 @@ async def on_guild_join(guild):
     await add_guild()
     embed = discord.Embed(title=f':tools: Suggestion Bot', color=0xffffff)
     embed.add_field(name=f'Thanks for adding suggestion bot {guild.owner.name}!', value=f'To configure the bot use **!settings** in a server text channel. To see the available commands do: **!help**, \nplease make sure the bot has the following permission: `Administrator` or the following: `Manage messages`, `Add reactions`, `Read messages`, `Send messages`, `Read message history`, `Embed links` and `Attach file`')
-    embed.add_field(name=f'Links', value=f'[Source Code](https://github.com/DerpDays/Suggestion-Bot)  |  [Support Server](http://discord.gg/8nG3FkS)  |  [Suppoort Me](http://paypal.me/DerpDays)')
     await guild.owner.send(embed=embed)
 
 
 @client.event
 async def on_ready():
     print('-------------------------------------------------------------')
-    print('Bot created by @DerpDays#0001')
+    print('Bot created by @DerpDays')
+    print('Updated to the discord rewrite by @AdamAtomus')
     print('You may not remove the credit,')
     print('However you can expand the bot.')
     print('If you have any issues please contact me on discord')
     print('Or create a issue on GitHub')
     print('-------------------------------------------------------------')
-    await client.change_presence(activity=discord.Activity(name='Suggestion Bot | !help', type=0))
     await add_guild()
 
 
@@ -82,11 +81,6 @@ try:
     client.run(client.config["GLOBAL"]["TOKEN"], bot=True, reconnect=True)
 except:
     print("---------------------------------------------------------------------")
-    print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
-    print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
-    print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
-    print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
-    print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
     print("INVALID TOKEN, PLEASE EDIT THE TOKEN FIELD IN SETTINGS.JSON")
     print("---------------------------------------------------------------------")
     time.sleep(10)

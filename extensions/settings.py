@@ -4,7 +4,7 @@ from discord import utils
 import asyncio
 import json
 
-class Settings():
+class Settings(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot

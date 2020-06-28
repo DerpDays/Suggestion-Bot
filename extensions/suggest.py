@@ -4,7 +4,7 @@ from discord import utils
 import asyncio
 import json
 
-class Suggest():
+class Suggest(commands.Cog):
 
 
     def __init__(self, bot):
@@ -22,10 +22,11 @@ class Suggest():
             return
 
         author = ctx.author
-        time = discord.Embed(title=f'Time', description=f'You ran out of time, please try again!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays', color=0xFF4C4C)
-        briefembed = discord.Embed(title=f'Suggest', description=f'Please give a brief explanation of your suggestion!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays', color=0xffffff)
-        explainembed = discord.Embed(title=f'Suggest', description=f'Please explain your suggestion in futher detail, maybe a example etc!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays', color=0xffffff)
-        channelnotexist = discord.Embed(title=f'Suggest', description=f'The channel you gave does not exist.', footer=f'Suggestion by: {author.name} • Bot made by DerpDays', color=0xffffff)
+        time = discord.Embed(title=f'Time', description=f'You ran out of time, please try again!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays.', color=0xFF4C4C)
+        briefembed = discord.Embed(title=f'Suggest', description=f'Please give a brief explanation of your suggestion!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays.', color=0xffffff)
+        sentembed = discord.Embed(title=f'Suggest', description=f'Your suggestion was sent!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays.', color=0xffffff)
+        explainembed = discord.Embed(title=f'Suggest', description=f'Please explain your suggestion in further detail, maybe a example etc!', footer=f'Suggestion by: {author.name} • Bot made by DerpDays.', color=0xffffff)
+        channelnotexist = discord.Embed(title=f'Suggest', description=f'The channel you gave does not exist.', footer=f'Suggestion by: {author.name} • Bot made by DerpDays.', color=0xffffff)
         await ctx.message.delete()
 
         if self.bot.config["GUILDS"][str(ctx.guild.id)]["TOGGLEPM"] == "ON":
@@ -58,9 +59,10 @@ class Suggest():
             embed = discord.Embed(title=f'Suggestion ID: {self.bot.config["GUILDS"][str(ctx.guild.id)]["ID"]}', colour=0xffffff)
             embed.add_field(name=f'Brief Explanation: ', value=f'{brief.content}')
             embed.add_field(name=f'Detailed Explanation: ', value=f'{explain.content}')
-            embed.set_footer(text=f'Suggestion by: {author.name} • Bot made by DerpDays')
+            embed.set_footer(text=f'Suggestion by: {author.name} • UserID: {author.id} • Bot made by DerpyDays.')
 
             try:
+                await author.send(embed=sentembed)
                 channel = discord.utils.get(ctx.guild.text_channels, id=int(self.bot.config["GUILDS"][str(ctx.guild.id)]["OUTPUT"]))
                 msg = await channel.send(embed=embed)
             except:
@@ -81,7 +83,7 @@ class Suggest():
                 return True if m.channel.id == author.dm_channel.id and m.author.id == author.id else False
 
 
-            msg = await ctx.send(f'{author.mention} Check your PM''s')
+            msg = await ctx.send(f'{author.mention} Check your DM''s')
 
             await author.send(embed=briefembed)
             try:
@@ -106,9 +108,10 @@ class Suggest():
             embed = discord.Embed(title=f'Suggestion ID: {self.bot.config["GUILDS"][str(ctx.guild.id)]["ID"]}', colour=0xffffff)
             embed.add_field(name=f'Brief Explanation: ', value=f'{brief.content}')
             embed.add_field(name=f'Detailed Explanation: ', value=f'{explain.content}')
-            embed.set_footer(text=f'Suggestion by: {author.name} • Bot made by DerpDays')
+            embed.set_footer(text=f'Suggestion by: {author.name} • UserID: {author.id} • Bot made by DerpDays.')
 
             try:
+                await author.send(embed=sentembed)
                 channel = discord.utils.get(ctx.guild.text_channels, id=int(self.bot.config["GUILDS"][str(ctx.guild.id)]["OUTPUT"]))
                 msg = await channel.send(embed=embed)
             except:

@@ -5,7 +5,7 @@ import asyncio
 import json
 
 
-class General:
+class General(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -56,7 +56,7 @@ class General:
 
         embed = discord.Embed(color=0xffffff)
         embed.set_author(name=f'🛠 Help', icon_url=ctx.author.avatar_url)
-        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays')
+        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays.')
         embed.add_field(name=f'Suggest', value=f'Sends the command author a form to complete and the results are posted in the desired channel!', inline=False)
         await ctx.send(embed=embed)
 
@@ -68,7 +68,7 @@ class General:
 
         embed = discord.Embed(color=0xffffff)
         embed.set_author(name=f'🛠 Help', icon_url=ctx.author.avatar_url)
-        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays')
+        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays.')
         embed.add_field(name=f'settings', value=f'Configure the bots settings! \nValid Sub Commands: *output*, *toggle*, *togglepm*, *prefix*', inline=False)
         await ctx.send(embed=embed)
 
@@ -78,7 +78,7 @@ class General:
 
         embed = discord.Embed(color=0xffffff)
         embed.set_author(name=f'🛠 Help', icon_url=ctx.author.avatar_url)
-        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays')
+        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays.')
         embed.add_field(name=f'extension', value=f'Manage certain features of the bot! \nValid Sub Commands: *reload*, *load*, *unload*', inline=False)
         await ctx.send(embed=embed)
 
@@ -89,7 +89,7 @@ class General:
 
         embed = discord.Embed(color=0xffffff)
         embed.set_author(name=f'🛠 Help', icon_url=ctx.author.avatar_url)
-        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays')
+        embed.set_footer(text=f'Type !help <command> for more info on a command • Bot made by DerpDays.')
         embed.add_field(name=f'bot', value=f'Manage the bot! \nValid Sub Commands: *stop, *prefix*', inline=False)
         await ctx.send(embed=embed)
 

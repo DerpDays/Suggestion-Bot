@@ -5,7 +5,7 @@ import asyncio
 import json
 
 
-class Developers:
+class Developers(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
